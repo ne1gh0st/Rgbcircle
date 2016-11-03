@@ -2,6 +2,8 @@ package com.example.netghost.rgbcircle;
 
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.view.MotionEvent;
+
 
 /**
  * Created by netghost on 29.10.16.
@@ -22,6 +24,14 @@ public class GameManager {
 
     }
 
+    public static int getWidth() {
+        return width;
+    }
+
+    public static int getHeight() {
+        return height;
+    }
+
 
     private void initMainCircle() {
         mainCircle = new MainCircle(width / 2, height / 2);
@@ -29,5 +39,13 @@ public class GameManager {
 
     public void onDraw() {
         canvasView.drawCircle(mainCircle);
+    }
+ //   @Override
+  //  public boolean onTouchEvent(MotionEvent event){
+ //       return super.onTouchEvent(event);
+//    }
+
+    public void onTouchEvent(int x, int y) {
+        mainCircle.moveMainCircleWhenTouchAt(x,y);
     }
 }
