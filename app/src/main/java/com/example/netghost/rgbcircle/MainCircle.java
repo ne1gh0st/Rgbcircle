@@ -1,5 +1,7 @@
 package com.example.netghost.rgbcircle;
 
+import android.graphics.Color;
+
 import java.util.concurrent.Callable;
 
 /**
@@ -9,9 +11,11 @@ import java.util.concurrent.Callable;
 public class MainCircle extends SimpleCircle{
     private static final int INT_RADIUS = 50;
     private static final int MAIN_SPEED = 30;
+    public static final int OUR_COLOR = Color.BLUE;
 
     public MainCircle(int x, int y, int radius) {
         super(x, y, INT_RADIUS);
+        setColor(OUR_COLOR);
     }
 
 

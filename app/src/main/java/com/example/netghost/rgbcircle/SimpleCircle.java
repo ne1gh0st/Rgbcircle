@@ -8,6 +8,7 @@ public class SimpleCircle {
     protected int x;
     protected int y;
     protected int radius;
+    private int color;
 
     public SimpleCircle(int x, int y, int radius) {
         this.x = x;
@@ -25,5 +26,13 @@ public class SimpleCircle {
 
     public int getY() {
         return y;
+    }
+
+    public int getColor() {
+        return this.color;
+    }
+
+    public void setColor(int color) {
+        this.color = color;
     }
 }
