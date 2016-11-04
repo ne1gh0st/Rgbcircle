@@ -1,5 +1,7 @@
 package com.example.netghost.rgbcircle;
 
+import java.util.concurrent.Callable;
+
 /**
  * Created by netghost on 29.10.16.
  */
@@ -11,7 +13,7 @@ public class MainCircle {
     private int y;
     private int radius;
 
-    public MainCircle(int x, int y){
+    public MainCircle(int x, int y) {
         this.x = x;
         this.y = y;
         this.radius = INT_RADIUS;
@@ -29,9 +31,11 @@ public class MainCircle {
     }
 
     public void moveMainCircleWhenTouchAt(int x1, int y1) {
-        int dx = (x-x1) * 30 / GameManager.getWidth();
-        int dy = (y-y1) * MAIN_SPEED / GameManager.getHeight();
+        int dx = (x1-x) * MAIN_SPEED / GameManager.getWidth();
+        int dy = (y1-y) * MAIN_SPEED / GameManager.getHeight();
         x += dx;
         y += dy;
     }
+
+    ;
 }
