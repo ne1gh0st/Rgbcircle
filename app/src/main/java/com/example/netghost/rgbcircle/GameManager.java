@@ -35,7 +35,7 @@ public class GameManager {
 
 
     private void initMainCircle() {
-        mainCircle =  new MainCircle(width / 2, height / 2);
+        mainCircle =  new MainCircle(width / 2, height / 2, 0);
     }
 
     public void onDraw() {

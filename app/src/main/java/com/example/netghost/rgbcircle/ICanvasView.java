@@ -5,7 +5,7 @@ package com.example.netghost.rgbcircle;
  */
 
 public interface ICanvasView {
-    void drawCircle(MainCircle circle);
+    void drawCircle(SimpleCircle circle);
 
 //    void redraw();
 }
