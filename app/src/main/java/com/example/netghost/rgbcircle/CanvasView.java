@@ -6,10 +6,13 @@ import android.graphics.Paint;
 import android.graphics.Point;
 import android.util.AttributeSet;
 import android.view.Display;
+import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.View.OnTouchListener;
+import android.widget.Toast;
+
 /**
  * Created by netghost on 29.10.16.
  */
@@ -20,6 +23,7 @@ public class CanvasView extends View implements ICanvasView{
     private GameManager gameManager;
     private Paint paint;
     private Canvas canvas;
+    private Toast toast;
     public CanvasView(Context context, AttributeSet attrs) {
         super(context, attrs);
         initWidthAndHeight(context);
@@ -53,6 +57,22 @@ public class CanvasView extends View implements ICanvasView{
         paint.setColor(circle.getColor());
         canvas.drawCircle(circle.getX(), circle.getY(), circle.getRadius(), paint);
     }
+
+    @Override
+    public void redraw() {
+       invalidate();
+    }
+
+    @Override
+    public void showMessage(String text) {
+        if(toast != null){
+            toast.cancel();
+        }
+        toast= Toast.makeText(getContext(), text, Toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.CENTER,0,0);
+        toast.show();
+    }
+
     @Override
     public boolean onTouchEvent(MotionEvent event){
         int x = (int) event.getX();
